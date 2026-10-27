@@ -1,0 +1,18 @@
+from rest_framework import serializers
+from .models import Menu, Booking
+
+
+class MenuSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Menu
+        fields = '__all__'
+
+
+# Alias MenuItemSerializer to MenuSerializer for compatibility
+MenuItemSerializer = MenuSerializer
+
+
+class BookingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Booking
+        fields = '__all__'

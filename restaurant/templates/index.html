@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon Restaurant | Mediterranean Dining & Capstone API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Markazi+Text:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restaurant/css/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="brand">
+                <div class="lemon-badge">🍋</div>
+                <div class="brand-text">
+                    <h1>Little Lemon</h1>
+                    <span>Chicago</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="/restaurant/" class="active">Home</a>
+                <a href="/restaurant/menu/">Menu API</a>
+                <a href="/restaurant/booking/tables/">Bookings API</a>
+                <a href="/api-token-auth/">Token Auth</a>
+                <a href="/admin/">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>Little Lemon</h2>
+                    <h3>Chicago</h3>
+                    <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. Experience the finest culinary flavours inspired by Italian, Greek, and Turkish heritage.</p>
+                    <div class="hero-buttons">
+                        <a href="/restaurant/menu/" class="btn btn-primary" id="view-menu-btn">Explore Menu API</a>
+                        <a href="/restaurant/booking/tables/" class="btn btn-secondary" id="book-table-btn">Book a Table (API)</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="{% static 'restaurant/img/logo.png' %}" alt="Little Lemon Restaurant Banner" class="hero-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights / Features -->
+        <section class="features-section container">
+            <div class="section-header">
+                <h2>Capstone Backend Endpoints</h2>
+                <p>All endpoints are fully wired with Django REST Framework, Djoser authentication, and MySQL integration.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="api-card">
+                    <div class="card-tag">Static View</div>
+                    <h3>Restaurant Home</h3>
+                    <p>Renders this static template with restaurant branding and styling.</p>
+                    <code>GET /restaurant/</code>
+                    <a href="/restaurant/" class="card-link">View Page &rarr;</a>
+                </div>
+
+                <div class="api-card">
+                    <div class="card-tag">Public / Auth</div>
+                    <h3>Menu Items API</h3>
+                    <p>List all menu items or create new dishes via DRF generic views.</p>
+                    <code>GET/POST /restaurant/menu/</code>
+                    <a href="/restaurant/menu/" class="card-link">Test in Browser &rarr;</a>
+                </div>
+
+                <div class="api-card">
+                    <div class="card-tag">Detail View</div>
+                    <h3>Single Menu Item</h3>
+                    <p>Retrieve, update, or delete a single menu item by ID.</p>
+                    <code>GET/PUT/DELETE /restaurant/menu/&lt;pk&gt;</code>
+                    <a href="/restaurant/menu/1" class="card-link">View Single Item &rarr;</a>
+                </div>
+
+                <div class="api-card highlight-card">
+                    <div class="card-tag">Protected API</div>
+                    <h3>Table Bookings API</h3>
+                    <p>Protected by <code>IsAuthenticated</code>. Requires Auth Token.</p>
+                    <code>GET/POST /restaurant/booking/tables/</code>
+                    <a href="/restaurant/booking/tables/" class="card-link">Open Booking API &rarr;</a>
+                </div>
+
+                <div class="api-card">
+                    <div class="card-tag">Djoser</div>
+                    <h3>User Registration</h3>
+                    <p>Register new users and manage credentials seamlessly.</p>
+                    <code>POST /auth/users/</code>
+                    <span class="card-link">Use Insomnia / Postman</span>
+                </div>
+
+                <div class="api-card">
+                    <div class="card-tag">Token Auth</div>
+                    <h3>Obtain Auth Token</h3>
+                    <p>Generate bearer tokens for DRF API authentication.</p>
+                    <code>POST /restaurant/api-token-auth/</code>
+                    <a href="/restaurant/api-token-auth/" class="card-link">Visit Auth View &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Little Lemon Restaurant &bull; Meta Back-End Developer Capstone Project.</p>
+        </div>
+    </footer>
+</body>
+</html>
